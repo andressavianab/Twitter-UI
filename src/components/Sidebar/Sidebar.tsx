@@ -12,29 +12,38 @@ export const Sidebar = () => {
     <nav className='main-navigation'>
       <NavLink to="/">
         <House weight='fill'/>
-        Home</NavLink>
+       <span>Home</span> 
+      </NavLink>
       <a href="#">
-        <Hash/>
-        Explore</a>
+       <Hash />
+       <span>Explore</span> 
+      </a>
       <a href="#">
         <Bell />
-        Notifications</a>
+        <span>Notifications</span>
+      </a>
       <a href="#">
         <Envelope />
-        Messages
+       <span>Messages</span>
       </a>
       <a href="#">
         <BookmarkSimple/>
-        Bookmarks</a>
+        <span>Bookmarks</span>
+      </a>
       <a href="#">
         <FileText/>
-        Lists</a>
+        <span>Lists</span> 
+      </a>
       <a href="#">
         <User/>
-        Profile</a>
+        <span>
+        Profile
+        </span>
+      </a>
       <a href="#">
         <DotsThreeCircle/>
-        More</a>
+       <span>More</span> 
+      </a>
     </nav>
 
     <button className='new-tweet' type='button'>Tweet</button>

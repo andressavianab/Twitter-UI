@@ -1,15 +1,25 @@
+import { FormEvent, useState } from 'react'
 import { Header } from '../../components/Header/Header'
 import { Separator } from '../../components/Separator/Separator'
 import { Tweet } from '../../components/Tweet/Tweet'
 import './status.css'
 
-const answers = [
-  'Agree!',
-  'Makes sense!',
-  'Congrats!'
-]
-
 export const Status = () => {
+
+  const [newAnswer, setNewAnswer] = useState('')
+
+  const [answers, setAnswer] = useState([
+    'Agree!',
+    'Makes sense!',
+    'Congrats!'
+  ])
+
+  function createNewAnswer(e: FormEvent)  {
+    e.preventDefault()
+    setAnswer([newAnswer, ...answers])
+    setNewAnswer('')
+  }
+
   return (
     <main className='status'>
     <Header title="Tweet"/>
@@ -18,10 +28,17 @@ export const Status = () => {
 
     <Separator/>
     
-    <form className='answer-tweet-form'>
+    <form onSubmit={createNewAnswer} className='answer-tweet-form'>
       <label htmlFor="tweet">
         <img src="http://github.com/andressavianab.png" alt="Andressa Batista" />
-        <textarea id="tweet"  placeholder="Tweet your answer"/>
+        <textarea 
+        id="tweet"  
+        placeholder="Tweet your answer"
+        value={newAnswer}
+        onChange={(e) => {
+          setNewAnswer(e.target.value)
+        }}
+        />
       </label>
       <button type='submit'>Answer</button>
     </form>
