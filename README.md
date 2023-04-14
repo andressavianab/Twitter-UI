@@ -1,4 +1,4 @@
-# 🧮 [Twitter-UI](https://andressavianab.github.io/Twitter-UI/)
+# 🧮 [Twitter-UI](https://dulcet-praline-a8f967.netlify.app/)
 
 ## Table of contents
 
